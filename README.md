@@ -22,3 +22,7 @@ Desafio proposto pela galera da Codenation, para o processo
 A logica foi desenvolvida orientada a click, então acessando o projeto via terminal e rodando o comando 
 `yarn start` 
 é possivel visualizar o resultado.
+
+<p align="center">
+<img src="https://github.com/artcurty/criptografia-julio-cesar/blob/master/public/front.png"/>
+</p>
