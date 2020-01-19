@@ -1,10 +1,63 @@
-.retorno-api {
+.module-box {
+  width: 800px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.02);
+  border-radius: 2px;
+}
+.module-box main {
+  margin: 30px;
+}
+.module-box main h1 {
+  margin: 30px;
+  text-align: center;
+  color: #d63939;
+}
+
+main .buttom-group {
+  margin: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+main .buttom-group button {
+  width: 100%;
+  border: 0px;
+  border-radius: 2px;
+  margin-top: 30px;
+  background: #d63939;
+  padding: 15px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.5s;
+}
+main .buttom-group button:hover {
+  background: #bd3232;
+}
+main ul {
+  list-style-type: none;
+}
+main li {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+}
+main label {
   text-align: left;
   margin: 8px;
   display: flex;
   align-items: center;
+  font-weight: bold;
+  color: #d63939;
 }
-.retorno-api p {
+main p {
   margin-left: 8px;
   color: #333;
 }

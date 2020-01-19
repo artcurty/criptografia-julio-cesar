@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+import "./global.css";
 import sha1 from "js-sha1";
 import base_answer from "./services/base_answer.json";
-import axios, { post } from "axios";
-import answer from "./services/answer.json";
+
 const alfabeto = [
   "a",
   "b",
@@ -42,16 +42,16 @@ function App() {
     getData();
   }, []);
 
-  function descriptog() {
+  function encrypt() {
     const { cifrado } = codinationData;
-
+    const encryptSwitchNumber = 6;
     const cifradoArray = cifrado.split("");
     const decifradoArray = [];
     cifradoArray.map(element => {
       let letra = alfabeto.indexOf(element);
 
       if (letra !== -1) {
-        let casas = letra + 1;
+        let casas = letra + encryptSwitchNumber;
         let decifrado = [];
         if (casas > alfabeto.length - 1) {
           let restante = casas - alfabeto.length;
@@ -69,15 +69,16 @@ function App() {
     setcodinationData({ ...codinationData, decifrado, resumo_criptografico });
   }
 
-  function criptog() {
+  function decipher() {
     const { cifrado } = codinationData;
+    const decipherSwitchNumber = 6;
     const cifradoArray = cifrado.split("");
     const decifradoArray = [];
     cifradoArray.map(element => {
       let posAlfabeto = alfabeto.indexOf(element);
 
       if (posAlfabeto !== -1) {
-        let posNova = posAlfabeto - 6;
+        let posNova = posAlfabeto - decipherSwitchNumber;
 
         let decifrado = [];
         posNova < 0
@@ -107,30 +108,30 @@ function App() {
 
   return (
     <>
-      <div>
-        <div className="retorno-api">
-          <strong>Numero de casas:</strong>
-          <p>{codinationData.numero_casas}</p>
-        </div>
-        <div className="retorno-api">
-          <strong>Token: </strong>
-          <p>{codinationData.token}</p>
-        </div>
-        <div className="retorno-api">
-          <strong>Cifrado:</strong>
-          <p> {codinationData.cifrado}</p>
-        </div>
-        <div className="retorno-api">
-          <strong>Decifrado: </strong>
-          <p>{codinationData.decifrado}</p>
-        </div>
-        <div className="retorno-api">
-          <strong>Resumo criptografico:</strong>
-          <p>{codinationData.resumo_criptografico}</p>
-        </div>
-        <button onClick={descriptog}>Criptografar</button>
-        <button onClick={criptog}>Decifrar</button>
-        <button onClick={handleSave}>Salvar</button>
+      <div className="module-box">
+        <main>
+          <h1>CIFRA DE CÉSAR</h1>
+
+          <ul>
+            <li>
+              <label>Numero de casas: </label>
+              <p>{codinationData.numero_casas}</p>
+            </li>
+            <li>
+              <label>Cifrado:</label>
+              <p> {codinationData.cifrado}</p>
+            </li>
+            <li>
+              <label>Decifrado: </label>
+              <p>{codinationData.decifrado}</p>
+            </li>
+            <li className="buttom-group">
+              <button onClick={decipher}>Decifrar</button>
+              <button onClick={encrypt}>Cifrar</button>
+              <button onClick={handleSave}>Salvar</button>
+            </li>
+          </ul>
+        </main>
       </div>
     </>
   );
