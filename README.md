@@ -15,3 +15,10 @@ Cifrado: 1d.d
 
 Desafio proposto pela galera da Codenation, para o processo 
 [AceleraDev](https://www.codenation.dev/aceleradev)
+
+
+### Run
+
+A logica foi desenvolvida orientada a click, então acessando o projeto via terminal e rodando o comando 
+`yarn start` 
+é possivel visualizar o resultado.
