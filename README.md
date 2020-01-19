@@ -19,9 +19,10 @@ Desafio proposto pela galera da Codenation, para o processo
 
 ### Run
 
-A logica foi desenvolvida orientada a click, então acessando o projeto via terminal e rodando o comando 
-`yarn start` 
-é possivel visualizar o resultado.
+Alem da lógica, foi desenvolvido uma breve interface, que pode ser visualizada acessando a pasta do projeto via terminal e digitando os comandos
+
+      yarn install && yarn start
+
 
 <p align="center">
 <img src="https://github.com/artcurty/criptografia-julio-cesar/blob/master/public/front.png"/>
